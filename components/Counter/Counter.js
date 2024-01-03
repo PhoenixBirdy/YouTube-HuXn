@@ -1,29 +1,24 @@
 import React, { useState } from 'react';
-
-const OPERATION_FN = {
-  '+': (c) => c + 1,
-  '-': (c) => c - 1,
-  '*2': (c) => 2 * c,
-  '/3': (c) => Math.round(c / 3),
-};
+import { PROJECT1_OPERATIONS, DEC_1, MUL_2, DIV_3, INC_1 } from '../constants';
 
 const Counter = () => {
   const [counter, setCounter] = useState(0);
 
   const clickHandle = (sign) => () => {
-    setCounter((prevCounter) => OPERATION_FN[sign](prevCounter));
+    setCounter((prevCounter) => PROJECT1_OPERATIONS[sign](prevCounter));
   };
 
   return (
     <>
       <div>
+        <h1>Project Counter</h1>
         <p>{counter}</p>
       </div>
       <section>
-        <button onClick={clickHandle('+')}>+</button>
-        <button onClick={clickHandle('-')}>-</button>
-        <button onClick={clickHandle('*2')}>*2</button>
-        <button onClick={clickHandle('/3')}>/3</button>
+        <button onClick={clickHandle(INC_1)}>+</button>
+        <button onClick={clickHandle(DEC_1)}>-</button>
+        <button onClick={clickHandle(MUL_2)}>*2</button>
+        <button onClick={clickHandle(DIV_3)}>/3</button>
       </section>
     </>
   );

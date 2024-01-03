@@ -1,0 +1,24 @@
+.mainNavigation {
+  background-color: brown;
+}
+
+.list {
+  border: 1px solid green;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  color: bisque;
+}
+
+.list li {
+  display: inline;
+  background-color: coral;
+  padding: 10px 20px;
+}
+
+.list li:first-child {
+}
+
+.list li:last-child {
+}
